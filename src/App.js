@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import SingleCocktail from "./pages/SingleCocktail"
@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/cocktail/:id" component={SingleCocktail} />
-        <Route path="*" component={Error} />
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/cocktail/:id" element={<SingleCocktail />} />
+          <Route exact path="*" element={<Error />} />
       </Routes>
     </Router>
   )
